@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Code Editor</title>
+  <link rel="stylesheet" href="python.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/theme/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/python/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/addon/hint/show-hint.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/addon/hint/show-hint.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
+  <script src="lib/skulpt.min.js"></script>
+  <script src="lib/skulpt-stdlib.js"></script>
+</head>
+<body>
+  <div class="editor-container">
+    <h1>Python Code Editor</h1>
+    <textarea id="pythonCode" placeholder="Write your Python code here"></textarea>
+    <button id="runBtn">Run Python</button>
+    <button id="saveCode">Save Code</button>
+    <button id="clearOutput">Clear Output</button>
+    <div class="output-container">
+      <h2>Output:</h2>
+      <pre id="output"></pre>
+    </div>
+  </div>
+
+  <!-- Include Skulpt -->
+  <script src="https://cdn.jsdelivr.net/npm/skulpt@1.0.0/dist/skulpt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/skulpt@1.0.0/dist/skulpt-stdlib.js"></script>
+
+  <!-- Your JavaScript -->
+  <script src="python.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
+    
+</head>
+<body>
+    <div class="editor-container">
+        <div class="tabs">
+            <button><a href="python.html"> Python</a></button>
+            <button onclick="runCppCode()">Run C++ </button>
+            <button id="saveCode">Save Code</button>
+            <button onclick="clearOutput()">Clear Output</button>
+
+        </div>
+        <p>HTML</p>
+        <textarea id="html" class="code-editor"></textarea>
+        <p>CSS</p>
+        <textarea id="css" class="code-editor"></textarea>
+        <p>JS</p>
+        <textarea id="js" class="code-editor"></textarea>
+    </div>
+    <div class="output-container">
+        <iframe id="output"></iframe>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/edit/matchbrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/edit/closebrackets.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
