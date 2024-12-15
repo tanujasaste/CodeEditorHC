@@ -91,5 +91,50 @@ document.getElementById('clearOutput').addEventListener( 'click', function() {
     output.close();
     console.log("clearOutput")
 });
+// coustomized context menu
+const customMenu = document.getElementById("contextMenu");
+const pulse = document.getElementById('pulse');
 
+// Function to show the custom context menu
+function showContextMenu(event) {
+  event.preventDefault();
+  let menuX = event.clientX;
+  let menuY = event.clientY;
+
+  if (menuX > window.innerWidth - 220) {
+    menuX -= 220;
+  }
+  customMenu.style.left = `${menuX}px`;
+  customMenu.style.top = `${menuY}px`;
+  customMenu.style.transformOrigin = 'top left';
+
+  pulse.style.left = `${menuX - 10}px`;
+  pulse.style.top = `${menuY - 10}px`;
+  pulse.classList.add('active');
+  setTimeout(() => pulse.classList.remove('active'), 300);
+
+  customMenu.classList.add('visible');
+}
+
+// Event listener to handle right-click for context menu
+document.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+  if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") {
+    showContextMenu(event);
+  } else {
+    showContextMenu(event);
+  }
+});
+
+// Event listener to hide context menu on click
+document.addEventListener("click", () => {
+  customMenu.classList.remove('visible');
+});
+
+// Event listener to hide context menu on pressing 'Escape'
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    customMenu.classList.remove('visible');
+  }
+});
   

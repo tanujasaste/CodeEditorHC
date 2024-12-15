@@ -1,3 +1,6 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -79,6 +82,84 @@ iframe {
 .btn{
     display: none;
 }
+/* context menu */
+ul li {
+    list-style:none;
+  }
+  #contextMenu {
+    position:absolute;
+    transform-origin:top left;
+    transform:scale(0);
+    width:220px;
+    border:1px solid rgba(100,100,100,0.55);
+    padding:5px;
+    background:#282a36;
+    box-shadow:2px 2px 12px 4px rgba(100,100,100,0.4);
+    transition:transform 400ms ease-in-out 50ms;
+  }
+  #contextMenu.visible {
+    transform:scale(1);
+  }
+  #contextMenu ul li {
+    padding:5px 3px;
+    display:flex;
+    align-items:center;
+    cursor:pointer;
+    color:white;
+    font-size:15px;
+  }
+  #contextMenu ul li:hover {
+    background:rgba(100,100,100,0.12);
+  }
+  #contextMenu ul li.disabled {
+    color:rgba(100,100,100,0.5);
+    cursor:pointer;
+  }
+  #contextMenu ul li.share {
+  /*   height:40px; */
+    width:100%;
+    flex-direction:column;
+    align-items:left;
+    flex-wrap:wrap;
+  }
+  #contextMenu ul li.share > .name {
+    margin-top:-2px;
+    margin-bottom:10px;
+    display:block;
+  }
+  
+  #contextMenu ul li.share .icons {
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+  }
+  #contextMenu ul li.share .icons > i:hover{
+    background:#e7e7e7;
+  }
+  
+  #contextMenu ul li i {
+    width:20px; 
+  }
+  #contextMenu ul li div.name {
+    padding-left:8px;
+  }
+  #contextMenu div.break {
+    margin:4px 0px;
+    border-top:1px solid rgba(100,100,100,0.5);
+  }
+  
+  #pulse {
+    position:fixed;
+    width:35px;
+    height:35px;
+    background:rgba(0,0,0,1);
+    opacity:0;
+    border-radius:50%;
+    z-index:100;
+  }
+  #pulse.active {
+    animation:pulse 400ms ease;
+  }
 
 @media (max-width: 480px){
     body {
