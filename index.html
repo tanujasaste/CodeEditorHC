@@ -12,10 +12,10 @@
 <body>
     <div class="editor-container">
         <div class="tabs">
-            <button><a href="python.html"> Python</a></button>
-            <button onclick="runCppCode()">Run C++ </button>
+            <button id="python"><a href="python.html"> Python</a></button>
+            <button id="runCpp">Run C++ </button>
             <button id="saveCode">Save Code</button>
-            <button onclick="clearOutput()">Clear Output</button>
+            <button id="clearOutput">Clear Output</button>
 
         </div>
         <p>HTML</p>
@@ -25,6 +25,11 @@
         <p>JS</p>
         <textarea id="js" class="code-editor"></textarea>
     </div>
+    <div class="btn">
+        <button id="saveCode">Save Code</button>
+        <button id="clearOutput">Clear Output</button>
+    </div>
+
     <div class="output-container">
         <iframe id="output"></iframe>
     </div>

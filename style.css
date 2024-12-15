@@ -76,3 +76,51 @@ iframe {
     padding: 2%;
     color: #73D0FF;
 }
+.btn{
+    display: none;
+}
+
+@media (max-width: 480px){
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content:center;
+        flex-direction: column;
+        width:100vw;
+        height: auto;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    .editor-container {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: #282a36;
+    }
+    .output-container{
+        width: 100%;
+        background: #232631;
+        outline: 0;
+    }
+    .editor-container .tabs #saveCode{
+        display: none;
+    }
+    .editor-container .tabs #clearOutput{
+        display: none; 
+    }
+    .btn button{
+        box-shadow: 1px 1px 8px rgb(4, 16, 58);
+        background-color: #2760c2ad;
+        border: 0;
+        outline: 0;
+        padding: 8px 10px;
+        margin: 3% 2% 2% 2%;
+        color: var(--primary-color);
+    }
+    .btn{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        background: #232631;
+    }
+}

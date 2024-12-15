@@ -83,13 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 // Clear Output Function
-function clearOutput() {
+document.getElementById('clearOutput').addEventListener( 'click', function() {
     const outputFrame = document.getElementById('output');
     const output = outputFrame.contentDocument;
     output.open();
     output.write('');
     output.close();
     console.log("clearOutput")
-};
+});
 
   
