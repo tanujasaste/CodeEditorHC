@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     jsEditor.on('change', updateOutput);
 
     // Save Code Function
-    document.getElementById('saveCode').addEventListener('click', function() {
+    window.saveCode = function() {
         const htmlCode = htmlEditor.getValue();
         const cssCode = cssEditor.getValue();
         const jsCode = jsEditor.getValue();
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         saveFile('index.html', htmlCode);
         saveFile('styles.css', cssCode);
         saveFile('script.js', jsCode);
-    });
+    };
 
     function saveFile(filename, content) {
         const blob = new Blob([content], { type: 'text/plain' });
@@ -83,14 +83,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 // Clear Output Function
-document.getElementById('clearOutput').addEventListener( 'click', function() {
+ function clearOutput() {
     const outputFrame = document.getElementById('output');
     const output = outputFrame.contentDocument;
     output.open();
     output.write('');
     output.close();
     console.log("clearOutput")
-});
+};
 // coustomized context menu
 const customMenu = document.getElementById("contextMenu");
 const pulse = document.getElementById('pulse');
