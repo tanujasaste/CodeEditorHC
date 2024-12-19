@@ -7,6 +7,8 @@ body {
     justify-content: space-between;
     height: 100vh;
     margin: 0;
+    overflow-x:hidden;
+    overflow-y:hidden;
 }
 
 :root{
@@ -162,15 +164,22 @@ ul li {
   }
 
 @media (max-width: 480px){
-    body {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+   
+  html,body {
         font-family: Arial, sans-serif;
+        overflow-x: hidden;
         display: flex;
         justify-content:center;
         flex-direction: column;
         width:100vw;
         height: auto;
         margin: 0;
-        overflow-x: hidden;
+        
     }
     .editor-container {
         width: auto;
@@ -204,4 +213,5 @@ ul li {
         justify-content: flex-end;
         background: #232631;
     }
+
 }
